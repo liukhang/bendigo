@@ -1,0 +1,43 @@
+<div class="top-header container">
+	<div class="row">
+			<div class="col-md-4 col-sm-4 help padding-3">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('top-header-phone')->toHtml(); ?>
+			</div>
+			<div class="col-md-4 col-sm-4 padding-3" style="text-align: center;">
+				<p><?php echo __('Free delivery on all orders over $50') ?></p>
+			</div>
+			<div class="col-md-4 col-sm-4 padding-3">
+				<ul>
+					<li class="loca-left"><a href="#"><img src="<?php echo $block->getUrl();?>/pub/media/wysiwyg/i-loca.jpg" alt=""></a>&nbsp&nbsp&nbsp<a href="#"><?php echo __('Store Location') ?></a></li>
+					<li style="margin-left: 18px;"><a href="#"><?php echo __('Shpping Info') ?></a></li>
+					<li style="margin-left: 21px;"><a href="#"><?php echo __('FAQ') ?></a></li>
+				</ul>
+			</div>
+	</div>
+</div>
+<!-- <script>
+require(["jquery","Magento_Theme/js/swiper"], function(Configurable){
+	var swiper = new Swiper('.slider-default', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: 4000,
+        speed:1000,
+        autoplayDisableOnInteraction: false
+    });
+ 	    var swiper = new Swiper('.instagram-default', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 4,
+        paginationClickable: true,
+        spaceBetween: 20
+    });
+});
+
+</script> -->
+

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+        <head>
+                <link src="Magento_Cms/js/popup.js"/>
+        </head>
+        <body>
+                <!-- admin cms slider home page block -->
+                <referenceContainer name="home-slider"> 
+                        <block class="Magento\Framework\View\Element\Template" name="block-home-slider" template="Magento_Cms::home-slider.phtml" before="-"/>
+                </referenceContainer>
+                
+                <!-- admin cms banner home page block -->
+                <referenceContainer name="home-banner"> 
+                        <block class="Magento\Framework\View\Element\Template" name="block-home-banner" template="Magento_Cms::home-banner.phtml" before="-"/>
+                </referenceContainer>
+
+                <!-- admin cms featrued home page block -->
+                <referenceContainer name="home-featured"> 
+                        <block class="Magento\Framework\View\Element\Template" name="block-home-featured" template="Magento_Cms::home-featured.phtml" before="-"/>
+                </referenceContainer>
+
+                <referenceContainer name="content">
+                    <block class="Magento\Framework\View\Element\template" name="index.home" template="Magento_Cms::popup.phtml"/>
+                </referenceContainer>
+                <!-- <referenceBlock name="main" remove="true"/> -->
+        </body>
+</page>

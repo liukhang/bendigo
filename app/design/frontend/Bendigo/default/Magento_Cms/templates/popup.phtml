@@ -1,0 +1,4 @@
+<div id="popup-content" class="popup-content" style="display:none">
+	<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('popup-newsletter')->toHtml(); ?>
+    <?php echo $this->getLayout()->createBlock("Magento\Newsletter\Block\Subscribe")->setTemplate("Magento_Newsletter::subscribe.phtml")->toHtml();?>
+</div>

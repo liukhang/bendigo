@@ -1,0 +1,174 @@
+
+<div class="default-footer">
+	<div class="container">
+		<div class="row">
+			<div class="sub">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-newsletter')->toHtml(); ?>
+			        <form class="form subscribe"
+					    novalidate
+					    action="<?php /* @escapeNotVerified */ echo $block->getFormActionUrl() ?>"
+					    method="post"
+					    data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+					    id="newsletter-validate-detail">
+					    <div class="field newsletter">
+					        <div class="control">
+					            <input name="email" type="email" id="newsletter"
+					                        placeholder="<?php /* @escapeNotVerified */ echo __('Enter your email') ?>"
+					                        data-validate="{required:true, 'validate-email':true}"/>
+					        </div>
+					    </div>
+					    <div class="actions">
+					        <button class="action subscribe primary" title="<?php /* @escapeNotVerified */ echo __('Subscribe') ?>" type="submit">
+					            <span><?php /* @escapeNotVerified */ echo __('Join') ?></span>
+					        </button>
+					    </div>
+					</form>	
+				<div class="social-links">
+					<a href="#" class="btn btn-social-icon btn-facebook">
+						<span class="fa fa-facebook"></span>
+					</a>
+					<a href="#" class="btn btn-social-icon btn-instagram">
+						<span class="fa fa-instagram"></span>
+					</a>
+				</div>		
+			</div>
+			<div class="contact footer-links">
+			<h4>Bendigo Woollen Mills</h4>
+			<div class="block-contact footer-block" style="display: none;">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-default')->toHtml(); ?>
+			</div>
+			</div>
+			<div class="categories footer-links">
+
+			<h4>Categories</h4>
+			<div class="block-categories footer-block" style="display: none;">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-categories')->toHtml(); ?>
+			</div>
+			</div>
+			<div class="custom footer-links">
+			<h4>Customer Services</h4>
+				<div class="block-custom footer-block" style="display: none;">
+				<?php echo $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('footer-services')->toHtml(); ?>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-md-12 payment">
+				<img src="<?php echo $this->getBaseUrl(); ?>pub/media/wysiwyg/payment.jpg" alt="">
+				<img src="<?php echo $this->getBaseUrl(); ?>pub/media/wysiwyg/paypal.jpg" alt="" class="img-payment">
+		</div>
+	</div>
+</div>
+<script>
+require(["jquery"], function($){
+	$('.footer-links').on("click", function(){
+		if($(window).width()<768){
+		$(this).closest('.icon-footer').toggleClass('active');
+		$(this).closest('.footer-links').find('.footer-block').slideToggle();
+		}
+	});
+	$('.header-main-search .label').click(function(){
+		$('.header-main-search .control').toggle();
+	});
+	/*----- Cart Plus Minus Button -----*/  
+	// $(".pro-quantity").prepend('<span class="dec qtybutton">-</span>');
+	// $(".pro-quantity").append('<span class="inc qtybutton">+</span>');
+	$(".qtybutton").on("click", function() {
+	    var $button = $(this);
+	    var oldValue = $button.parent().find("input").val();
+	    if ($button.text() == "+") {
+	      var newVal = parseFloat(oldValue) + 1;
+	    } else {
+	       // Don't allow decrementing below zero
+	      if (oldValue > 1) {
+	        var newVal = parseFloat(oldValue) - 1;
+	        } else {
+	        newVal = 1;
+	      }
+	      }
+	    $button.parent().find("input").val(newVal);
+	});
+    $('.block-search .label').click(function(){
+        $('.block-search .action.search').css("display","block");
+    });
+});
+</script>
+<script>
+require(["jquery","Magento_Theme/js/owl-carousel"], function($,Configurable){
+        $('.instagram-default .owl-carousel').owlCarousel({
+            loop: true,
+            // margin: 10,
+            responsiveClass: true,
+            autoplay:true,
+            // autoplayTimeout:2000,
+            nav:true,
+            responsive: {
+            0: {
+                items: 1,
+                loop: true,
+                nav: true
+            },
+            768: {
+                items: 2,
+                loop: true,
+                nav: true
+            },
+            776: {
+                items: 4,
+                nav: true,
+                loop: true,
+                margin: 20
+            }
+        },
+    });
+    $('.pikachu .owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1000: {
+                items: 5,
+                loop: true,
+                margin: 20
+            }
+        },
+        autoplay:true,
+        dots: true
+        // autoplayTimeout:1000,
+    });
+    $('.fadeOut ').owlCarousel({
+        items: 1,
+        animateOut: 'fadeOutLeft',
+        autoplay:true,
+        loop: true,
+        margin: 10,
+    });
+});
+
+</script>
+<script type="text/x-magento-init">
+{"*":{"Magento_Customer\/js\/customer-data":{"sectionLoadUrl":"http:\/\/127.0.0.1\/magento\/customer\/section\/load\/","cookieLifeTime":"3600","updateSessionUrl":"http:\/\/127.0.0.1\/magento\/customer\/account\/updateSession\/"}}}    
+</script>
+<!-- <script>
+	require(['jquery','Magento_Ui/js/modal/modal'],
+		function($, modal) {
+			var options = {
+			type: 'popup',
+			responsive: true,
+			innerScroll: true,
+			modalClass: 'custom-block-customer-login',
+			buttons: false,
+		};
+
+		$('#login-popup').click(function(){
+			var popup = modal(options, $('#popup-mpdal'));
+			$('#popup-mpdal').modal('openModal');
+			});
+		});
+</script> -->
